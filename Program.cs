@@ -7,7 +7,7 @@ namespace CSharpAlgorithms
     {
         static void Main(string[] args)
         {
-            
+
         }
     }
 }
