@@ -1,7 +1,7 @@
 ﻿
 namespace CSharpAlgorithms.Search
 {
-    public class SimpleSearch
+    public static class SimpleSearch
     {
         /// <summary>
         /// Поиск элемента в массиве
