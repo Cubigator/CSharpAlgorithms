@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpAlgorithms.Search
+﻿namespace CSharpAlgorithms.Search
 {
     public static class BinarySearch
     {
@@ -26,6 +20,32 @@ namespace CSharpAlgorithms.Search
             }
 
             return -1;
+        }
+
+        public static int SearchRecursive(int[] arr, int value)
+        {
+            int index = FindInsertionIndex(arr, 0, arr.Length - 1, value);
+            return (arr[index] == value) ? index : -1;
+        }
+
+        private static int FindInsertionIndex(int[] arr, int left, int right, int value)
+        {
+            if(left == right) 
+                return left;
+
+            int mid = (right + left) / 2;
+
+            if (arr[mid] == value)
+                return mid;
+
+            if (arr[mid] <= value)
+            {
+                return FindInsertionIndex(arr, mid + 1, right, value);
+            }
+            else
+            {
+                return FindInsertionIndex(arr, left, mid, value);
+            }
         }
     }
 }
